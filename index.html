@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .multiselect {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .noselect {
+            user-select: none;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 80%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<form action="/home" id="form" class="form" method="POST">
+<table>
+    <tbody>
+        
+        <tr>
+            <td>Select <a href="#languages-endpoint">language</a>:</td>
+            <td>
+                <div class="multiselect noselect">
+                    <select id="lcodeSelect" class="appendLangOpts">
+                        <option value="cs">cs - Czech</option>
+                        <option value="de">de - German</option>
+                        <option value="en">en - English</option>
+                        <option value="es">es - Spanish</option>
+                        <option value="fr">fr - French</option>
+                        <option value="pt">pt - Portuguese</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Select flags to blacklist:</td>
+            <td>
+                <div class="multiselect noselect" id="flagWrapper">
+                    <div>
+                        <span id="flagSelectMulti">
+                            <input type="checkbox" id="flag-cb1">
+                            <label for="flag-cb1">NSFW</label>
+                            <input type="checkbox" id="flag-cb2">
+                            <label for="flag-cb2">Religious</label>
+                            <input type="checkbox" id="flag-cb3">
+                            <label for="flag-cb3">Political</label>
+                            <input type="checkbox" id="flag-cb4">
+                            <label for="flag-cb4">Racist</label>
+                            <input type="checkbox" id="flag-cb5">
+                            <label for="flag-cb5">Sexist</label>
+                            <input type="checkbox" id="flag-cb6">
+                            <label for="flag-cb6">Explicit</label>
+                        </span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Joke types:</td>
+            <td>
+                <div class="multiselect noselect" id="JokesType">
+                    <div>
+                        <span id="JokeSelect">
+                            <input type="checkbox" id="single">
+                            <label for="single">Single</label>
+                            <input type="checkbox" id="twopart">
+                            <label for="twopart">Twopart</label>
+                        </span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Your jokes contains this string:</td>
+            <td>
+                <div class="multiselect noselect" id="StringSearcher">
+                    <div>
+                        <span id="StringSearch">
+                            <input type="text" id="jokesString" name="string">
+                        </span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<input type="submit" value="Submit">
+</form>
+
+
+
+</body>
+</html>

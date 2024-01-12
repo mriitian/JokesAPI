@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jokes on you</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background: rgb(0, 3, 37);
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<style>
+
+  table {
+      width: 50%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      position: relative;
+      left: 25%;
+      top: 150px;
+  }
+
+  table, th, td {
+      border: 1px solid #ddd;
+  }
+
+  th, td {
+      padding: 10px;
+      text-align: left;
+  }
+
+  a {
+      text-decoration: none;
+      color: #007BFF;
+  }
+
+  .multiselect {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .noselect {
+      user-select: none;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+      margin-right: 5px;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+      width: 80%;
+      padding: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Dark Jokes
+  </div>
+    <form action="/" id="form" class="form" method="POST">
+    <table>
+        <tbody>
+            
+           
+            <tr>
+                <td>Select flags to blacklist:</td>
+                <td>
+                    <div class="multiselect noselect" id="flagWrapper">
+                        <div>
+                            <span id="flagSelectMulti">
+                                <input type="checkbox" id="flag-cb1" name="flags" value="NSFW">
+                                <label for="flag-cb1">NSFW</label>
+                                <input type="checkbox" id="flag-cb2" name="flags" value="Religious">
+                                <label for="flag-cb2">Religious</label>
+                                <input type="checkbox" id="flag-cb3" name="flags" value="Political">
+                                <label for="flag-cb3">Political</label>
+                                <input type="checkbox" id="flag-cb4" name="flags" value="Racist">
+                                <label for="flag-cb4">Racist</label>
+                                <input type="checkbox" id="flag-cb5" name="flags" value="Sexist">
+                                <label for="flag-cb5">Sexist</label>
+                                <input type="checkbox" id="flag-cb6" name="flags" value="Explicit">
+                                <label for="flag-cb6">Explicit</label>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Joke types:</td>
+                <td>
+                    <div class="multiselect noselect" id="JokesType">
+                        <div>
+                            <span id="JokeSelect">
+                                <input type="checkbox" id="single" name="Joketype" value="single">
+                                <label for="single">Single</label>
+                                <input type="checkbox" id="twopart" name="Joketype" value="Twopart">
+                                <label for="twopart">Twopart</label>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Your jokes contains this string:</td>
+                <td>
+                    <div class="multiselect noselect" id="StringSearcher">
+                        <div>
+                            <span id="StringSearch">
+                                <input type="text" id="jokesString" name="string">
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    <input type="submit" value="Submit" style="position: relative; left: 45%; top: 150px;">
+    </form>
+    <div class="Jokes" style="position: relative; left: 25%; top: 150px;">
+        <h1 style="position: relative; left: 16%;"> Jokes Here</h1>
+        <% if (locals.content && content.setup && content.delivery) { %>
+            <div class="Ques" style="width: 50em;"><h3>Setup: <%= content.setup %></h3></div>
+            <div class="Ans" style="width: 50em;"><h3>Delivery: <%= content.delivery %></h3></div>
+        <% } else if (locals.content && content.joke) { %>
+            <div class="joke" style="width: 50em;"><h3>Joke: <%= content.joke %></h3></div>
+        <% } else { %>
+            <div class="no-jokes"><h1>No jokes found.</h1></div>
+        <% } %>
+    </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    &copy; Copyright 2024 Vedant Parkhe</a>
+  </div>
+  
+
+</div>
+
+</body>
+</html>
